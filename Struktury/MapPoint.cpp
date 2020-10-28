@@ -4,7 +4,7 @@
 
 using namespace std;
 
-MapPoint *construct(const char* n, const double x, const double y){//EOM edit const
+MapPoint *construct(const char* n, const double x, const double y){
   struct MapPoint *point = new MapPoint;
   point->name = (char*)n;
   point->longitude = x;
@@ -18,7 +18,7 @@ MapPoint *construct(const char* n, const double x, const double y){//EOM edit co
   return point;
 }
 
-MapPoint *construct(char* n, double x, char a, double y, char b){//EOM edit const
+MapPoint *construct(char* n, double x, char a, double y, char b){
   struct MapPoint *point = new MapPoint;
   point->name = (char*)n;
   if(a == 'W'){
@@ -79,8 +79,6 @@ MapPoint closestPlace(MapPoint* p1, MapPoint* p2, MapPoint* p3){
   MapPoint point;
   const double d1 = angularDistance(distance(*p1, *p2));
   const double d2 = angularDistance(distance(*p1, *p3));
-/*  const MapDist d1 = distance(p1, p2); //EOM tak nie można podstawić, jeśli już to const double d1 = angularDistance(distance(*p1, *p2));
-  const MapDist d2 = distance(p1, p3);*/
   if(d1 < d2){
     point.name = p2->name;
   }else point.name = p3->name;
@@ -90,9 +88,9 @@ MapPoint closestPlace(MapPoint* p1, MapPoint* p2, MapPoint* p3){
 void clear (MapPoint* p){
   cout<<"Usuwanie "<<p->name<<endl;
   delete p;
-}//EOM edit
+}
 void clear (MapPoint* p1,MapPoint* p2,MapPoint* p3){
   clear(p1);
   clear(p2);
   clear(p3);
-}//EOM edit
+}
