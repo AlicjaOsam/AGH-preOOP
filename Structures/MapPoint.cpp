@@ -22,10 +22,10 @@ MapPoint *construct(char* n, double x, char a, double y, char b){
   struct MapPoint *point = new MapPoint;
   point->name = (char*)n;
   if(a == 'W'){
-    x += 2*(-x);
+    x = -x;
   }
   if(b == 'S'){
-    y += 2*(-y);
+    y = -y;
   }
   point->longitude = x;
   point->latitude = y;
@@ -38,10 +38,10 @@ void print(const MapPoint *p){
   double x = p->longitude;
   double y = p->latitude;
   if(x < 0){
-    x += 2*(-x);
+    x = -x;
   }
   if(y < 0){
-    y += 2*(-y);
+    y = -y;
   }
   cout<<"Wspolrzedne dla "<<p->name<<": "<<x<<p->directx<<", "<<y<<p->directy<<endl;
 }
@@ -59,7 +59,7 @@ void movePoint(MapPoint* p, const double n_x, const double n_y){
 
 MapPoint inTheMiddle(MapPoint* p1, const MapPoint* p2, char* n){
   MapPoint point;
-  point.name = n;
+  point.name = (char *)n;
   point.longitude = (p1->longitude + p2->longitude)/2;
   point.latitude = (p1->latitude + p2->latitude)/2;
   if(point.longitude > 0){
