@@ -1,35 +1,3 @@
-/* 
- Zdefiniuj klasę IntArrayList - listę zaimplementowaną na tablicy int,
-   zawierającą pola:  
-    - size - aktualny rozmiar zajętości
-    - maxSize - maksymalny rozmiar tablicy alokowanej w konstruktorze, 
-    - tab[maxSize] - tablicę alokowaną dynamicznie w konstruktorze,
- 
- * Zdefiniuj konstruktor(y) i destruktor (ustawiający size na 0, MaxSize na określoną wartość,
-   alokujące i zwalniające pamięć oraz metody:
-  * print - drukującą tablicę w postaci [w1,w2,w3]
-  * find - zwracającą indeks pierwszego znalezionego elementu o podanej wartości
-         - jeśli nie znaleziono, zwraca wartość ujemną
-  * printFind - obsługującą wyświetlanie funkcji find
-  * add - 4 wersje funkcji:
-   - wstawiająca element na koniec, jeśli jest miejsce
-   - wstawiająca na koniec tablicę elementów podaną jako parametr (wskaźnik tablicy + liczba elementów)
-     jeśli nie da się dodać całego wektora, nic nie dodaje
-   - wstawiająca element pod określony indeks, przesuwający resztę elementów w prawo
-   - wstawiająca element zachowując porządek rosnący (parametr typu bool ma wartość true)
- * remove - 2 wersje:
-   - usuwającą pierwsze wystapienie elementu, przesuwając pozostałe elementy w lewo
-   - usuwającą fragment tablicy o długości podanej jako parametr
-     od pierwszego wystąpienia danego elementu.
-
- * Pliku main.cpp, nie wolno modyfikować.
- * Skonfiguruj plik konfiguracyjny cmake albo napisz Makefile tak, aby:
-   - plikiem wynikowym był main
-   - program kompilował się z flagami -Wall -g - pedantic.
-   - były zdefiniowane cele użytkownika run i clean, check oraz all (main+run)
-
-*/
-
 #include <iostream>
 #include "intArrayList.h"
 
@@ -82,29 +50,3 @@ int main() {
     return 0;
 }
 
-/* Wynik działania programu (make run lub ./main)
-************* LIST1 *************
-------- ADD 7,-2,37 -------
-[7, -2, 37]
-------- ADD [3,6,9] -------
-[7, -2, 37, 3, 6, 9, 3, 6, 9]
-Wartość=37  Indeks=2
-------- REMOVE 37 -------
-[7, -2, 3, 6, 9, 3, 6, 9]
-Wartość=37  Element nieznaleziony
-------- ADD -50 IND=2 -------
-[7, -2, -50, 3, 6, 9, 3, 6, 9]
-------- REMOVE -50 n=3 -------
-[7, -2, 9, 3, 6, 9]
-------- ADD [3,6,9] -------
-[7, -2, 9, 3, 6, 9, 3, 6, 9]
-
-************* LIST2 *************
-------- ADD SORT -2,-4,10,5 -------
-[-4, -2, 5, 10]
-------- ADD SORT 7,0,3,2 -------
-[-4, -2, 0, 2, 3, 5, 7, 10]
-------- ADD SORT -8,6,13 -------
-[-8, -4, -2, 0, 2, 3, 5, 6, 7, 10, 13]
-
-*/
