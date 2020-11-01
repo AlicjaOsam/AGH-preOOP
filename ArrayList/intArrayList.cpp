@@ -1,7 +1,7 @@
 #include "intArrayList.h"
 #include <iostream>
 
-#define MaxTab 11
+int MaxTab 11
 
 using std::cout;
 using std::endl;
