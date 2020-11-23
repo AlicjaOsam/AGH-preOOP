@@ -43,8 +43,8 @@ int main() {
     prepend(&list1, tomasz);
     print(ptr1);
     removeLast(&list1);
-    clearList(&list1); //próba usunięcia pustej listy
-    removeList(ptr1);  //usunięcie listy łacznie zezwolnieniem pamięci na nazwę
+    clearList(&list1);
+    removeList(ptr1); 
   std::cout << "--- Usuwam listę element po elemencie" << std::endl;   
     print(&list2);
     removeLast(&list2);
