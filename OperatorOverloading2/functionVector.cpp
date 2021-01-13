@@ -23,9 +23,11 @@ double FunctionVector::calc(double x){
     tab.push_back(tab1[0](tab[1]));
     tab.push_back(tab4[0](tab[2]));
   }
-  tab[0] = (tab3[0](x));
-  tab[1] = (tab2[0](tab[0]));
-  tab[2] = (tab1[0](tab[1]));
-  tab[3] = (tab4[0](tab[2]));
+  else{
+    tab[0] = (tab3[0](x));
+    tab[1] = (tab2[0](tab[0]));
+    tab[2] = (tab1[0](tab[1]));
+    tab[3] = (tab4[0](tab[2]));
+  }
   return tab[3];
 }
