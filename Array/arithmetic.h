@@ -1,1 +1,0 @@
-int arithmetic(int *, int);
