@@ -1,1 +1,0 @@
-int median(int *, int);
